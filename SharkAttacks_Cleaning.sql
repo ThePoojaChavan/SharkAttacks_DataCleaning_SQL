@@ -135,14 +135,10 @@ commit
 --Renaming column Sex to Gender
 sp_rename 'dbo.attacks.Sex','Gender','COLUMN'
 
-
 --Renaming column Fatal (Y/N) to Fatal
 sp_rename 'dbo.attacks.Fatal (Y/N)','Fatal','COLUMN'
 
---Since we are not really needing the Case Number column, we will render it unused
-
 --Wrangling the Time column
-
 select trim([time])
 from dbo.attacks;
 
