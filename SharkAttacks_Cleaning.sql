@@ -11,16 +11,13 @@ FROM dbo.attacks
   or
   [Case Number] is null
 
- --Except column 'Species', deleting all rows that contain nulls in any of the columns
+ --Deleting all rows that contain nulls in any of the columns (exception is 'Species' column which we will deal at a later stage)
   delete from dbo.attacks
   where [Date] is null
   or
   [Case Number] is null
-
-  commit
-
- delete from dbo.attacks
-  where [Type] is null
+  or
+ [Type] is null
   or
   [Activity] is null
   or 
